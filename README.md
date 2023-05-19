@@ -8,56 +8,44 @@ gantt
        title Platon core roadmap
 
        section platon-discovery
-       Completed task            :done,    des1, 2014-01-06,2014-01-08
-       Active task               :active,  des2, 2014-01-09, 3d
-       Future task               :         des3, after des2, 5d
-       Future task2              :         des4, after des3, 5d
+       Initialize discovery                :done,    pd1, 2023-03-17, 15d
+       Integration with Nats               :done,    pd2, after pd1, 15d
+       Integration with Gateway            :done,    pd3, after pg1, 15d
+       Fix bug 503 with platon-gateway     :active,  crit, after pd3, 20d
        
        section platon-gateway
-       Completed task            :done,    des1, 2014-01-06,2014-01-08
-       Active task               :active,  des2, 2014-01-09, 3d
-       Future task               :         des3, after des2, 5d
-       Future task2              :         des4, after des3, 5d
+       Initialize gateway                 :done,    pg1, 2023-03-17, 15d
+       Integration with Nats              :done,    pg2, after pg1, 15d
+       Integration with Discovery         :done,    pg3, after pd1, 15d
        
        section platon-auth
-       Completed task            :done,    des1, 2014-01-06,2014-01-08
-       Active task               :active,  des2, 2014-01-09, 3d
-       Future task               :         des3, after des2, 5d
-       Future task2              :         des4, after des3, 5d
+       Initialize auth                    :done,    pa1, after pg3, 15d
+       Integration with Nats              :done,    pa2, after pa1, 15d
+       Integration with Discovery         :done,    pa3, after pa1, 15d
+       Auth UI                            :         after pa3, 20d
        
        section platon-plugin (Library for Spring boot application)
-       Completed task            :done,    des1, 2014-01-06,2014-01-08
-       Active task               :active,  des2, 2014-01-09, 3d
-       Future task               :         des3, after des2, 5d
-       Future task2              :         des4, after des3, 5d
+       Initialize plugin         :active,   pp1, 2023-05-19, 15d
+       Download public key       :done,     pp2, after pp1, 3d
+       Bulid into module         :          after pp1, 15d
        
        section platon-core (main module)
-       Completed task            :done,    des1, 2014-01-06,2014-01-08
-       Active task               :active,  des2, 2014-01-09, 3d
-       Future task               :         des3, after des2, 5d
-       Future task2              :         des4, after des3, 5d
-       
+       Init                      :crit,    pa1, after pg3, 15d
+
        section Platon modules (other module)
-       Completed task            :done,    des1, 2014-01-06,2014-01-08
-       Active task               :active,  des2, 2014-01-09, 3d
-       Future task               :         des3, after des2, 5d
-       Future task2              :         des4, after des3, 5d
+       Init                      :crit,    pa1, after pg3, 15d 
+       
+       section Platon market-place
+       Init                      :crit,    pa1, after pg3, 15d 
+       
+       section Documentation
+       Init                      :crit,    pa1, after pg3, 15d 
 
        section Critical tasks
-       Completed task in the critical line :crit, done, 2014-01-06,24h
-       Implement parser and jison          :crit, done, after des1, 2d
-       Create tests for parser             :crit, active, 3d
-       Future task in critical line        :crit, 5d
-       Create tests for renderer           :2d
-       Add to mermaid                      :1d
-
-       section Documentation
-       Describe gantt syntax               :active, a1, after des1, 3d
-       Add gantt diagram to demo page      :after a1  , 20h
-       Add another diagram to demo page    :doc1, after a1  , 48h
+       Init                      :crit,    pa1, after pg3, 15d 
 
        section Last section
-       Describe gantt syntax               :after doc1, 3d
-       Add gantt diagram to demo page      :20h
-       Add another diagram to demo page    :48h
+       Init                      :crit,    pa1, after pg3, 15d 
+
+      
    ```
