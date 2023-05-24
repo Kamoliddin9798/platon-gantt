@@ -30,7 +30,7 @@ gantt
        Bulid into module         :          pp3, after pp1, 15d
        
        section platon-core (main module)
-       Exclude auth moduel       :           pc1, after pp3, 15d
+       Exclude auth module       :           pc1, after pp3, 15d
        Init                      :crit,      pa1, after pg3, 15d
 
        section Platon modules (other module)
