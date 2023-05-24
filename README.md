@@ -27,12 +27,16 @@ gantt
        section platon-plugin (Library for Spring boot application)
        Initialize plugin         :active,   pp1, 2023-05-19, 15d
        Download public key       :done,     pp2, after pp1, 3d
-       Bulid into module         :          after pp1, 15d
+       Bulid into module         :          pp3, after pp1, 15d
        
        section platon-core (main module)
-       Init                      :crit,    pa1, after pg3, 15d
+       Exclude auth moduel       :           pc1, after pp3, 15d
+       Init                      :crit,      pa1, after pg3, 15d
 
        section Platon modules (other module)
+       Init                      :crit,    pa1, after pg3, 15d 
+       
+       section platon-admin (for configure/install/remove the platon-app and modeules)
        Init                      :crit,    pa1, after pg3, 15d 
        
        section Platon market-place
