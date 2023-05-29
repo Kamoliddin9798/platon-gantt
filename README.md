@@ -51,5 +51,15 @@ gantt
        section Last section
        Init                      :crit,    pa1, after pg3, 15d 
 
+       section Platon-frontend-starter
+       Initialize frontend-starter         :active, fr1, 2023-05-25, 15d
+       Writing tests for starter           :active, fr2, after fr1, 15d
+       Documentation                       :active, fr3, after fr2, 2d
+
+       section First module (File-manager)
+       Initialize module                   :done,   fm1, 2023-04-15, 5d
+       Integration module with starter     :active, fm2, after fr3, 5d
+       Writing tests for module            :active, fm3, after fm2, 10d
+       Documentation                       :active, fm4, after fm3, 2d
       
    ```
