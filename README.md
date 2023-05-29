@@ -36,7 +36,7 @@ gantt
        section Platon modules (other module)
        Init                      :crit,    pa1, after pg3, 15d 
        
-       section platon-admin (for configure/install/remove the platon-app and modeules)
+       section platon-admin (for configure/install/remove the platon-app and modules)
        Init                      :crit,    pa1, after pg3, 15d 
        
        section Platon market-place
@@ -61,5 +61,19 @@ gantt
        Integration module with starter     :active, fm2, after fr3, 5d
        Writing tests for module            :active, fm3, after fm2, 10d
        Documentation                       :active, fm4, after fm3, 2d
-      
+       
+       section Change env file to json.
+       Init                                :active ev1, after fm4, 3d
+       
+       section Platon modules (other modules)
+       Exclude modules.                    :active em1, after ev1, 21d
+       Initialize module.                  :active om1, after em1, 15d
+       
+       section platon-admin (for configure/install/remove the platon-app and modules)
+       Init                      :crit,    pu1, after om1, 15d 
+       
+       section Critical tasks
+       Init                      :crit,    ct1, after pu1, 15d
+       
+       
    ```
