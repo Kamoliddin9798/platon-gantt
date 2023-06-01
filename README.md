@@ -12,12 +12,17 @@ gantt
        Integration with Nats               :done,    pd2, after pd1, 15d
        Integration with Gateway            :done,    pd3, after pg1, 15d
        Fix bug 503 with platon-gateway     :active,  crit, after pd3, 20d
-       
+
        section platon-gateway
        Initialize gateway                 :done,    pg1, 2023-03-17, 15d
        Integration with Nats              :done,    pg2, after pg1, 15d
        Integration with Discovery         :done,    pg3, after pd1, 15d
-       
+
+       section Platon-UI-core-B
+       Initialize Platon-UI-core-B         :active, fr1, 2023-05-25, 15d
+       Tests for Platon-UI-core-B          :active, fr2, after fr1, 15d
+       Documentation                       :active, fr3, after fr2, 2d
+
        section platon-auth
        Initialize auth                    :done,    pa1, after pg3, 15d
        Integration with Nats              :done,    pa2, after pa1, 15d
@@ -28,52 +33,31 @@ gantt
        Initialize plugin         :active,   pp1, 2023-05-19, 15d
        Download public key       :done,     pp2, after pp1, 3d
        Bulid into module         :          pp3, after pp1, 15d
-       
+
        section platon-core (main module)
-       Exclude auth module       :           pc1, after pp3, 15d
-       Init                      :crit,      pa1, after pg3, 15d
+       Exclude auth module                           :           pc1, after pp3, 15d
+       Exclude ui-module (File-manager)              :active,    fm1, after fr3, 5d
+       Integration ui-module with Platon-UI-core-B   :active,    fm2, after fm1, 5d
+       Writing tests for ui-module (File-manager)    :active,    fm3, after fm2, 10d
+       Documentation for ui-module (File-manager)    :active,    fm4, after fm3, 2d
 
        section Platon modules (other module)
-       Init                      :crit,    pa1, after pg3, 15d 
-       
+       Init backend                           :crit,    pa1, after pg3, 15d
+       Exclude ui-modules.                    :active   ud1, after fm4, 21d
+       Connect ui-modules with UI-core-B      :crit,    ui1, after ud1, 15d
+       Exclude backend modules.               :active   em1, after ev1, 21d
+       Initialize module.                     :active   om1, after em1, 15d
+
        section platon-admin (for configure/install/remove the platon-app and modules)
-       Init                      :crit,    pa1, after pg3, 15d 
+       Init backend                 :crit,    pa1, after pg3, 15d 
+       Init UI                      :crit,    pu1, after ui1, 15d
        
        section Platon market-place
-       Init                      :crit,    pa1, after pg3, 15d 
+       Init backend                      :crit,    pa1, after pg3, 15d
+       Init ui-core                      :crit,    uc1, after pu1, 21d
        
        section Documentation
        Init                      :crit,    pa1, after pg3, 15d 
-
-       section Critical tasks
-       Init                      :crit,    pa1, after pg3, 15d 
-
-       section Last section
-       Init                      :crit,    pa1, after pg3, 15d 
-
-       section Platon-frontend-starter
-       Initialize frontend-starter         :active, fr1, 2023-05-25, 15d
-       Writing tests for starter           :active, fr2, after fr1, 15d
-       Documentation                       :active, fr3, after fr2, 2d
-
-       section First module (File-manager)
-       Initialize module                   :done,   fm1, 2023-04-15, 5d
-       Integration module with starter     :active, fm2, after fr3, 5d
-       Writing tests for module            :active, fm3, after fm2, 10d
-       Documentation                       :active, fm4, after fm3, 2d
-       
-       section Change env file to json.
-       Init                                :active ev1, after fm4, 3d
-       
-       section Platon modules (other modules)
-       Exclude modules.                    :active em1, after ev1, 21d
-       Initialize module.                  :active om1, after em1, 15d
-       
-       section platon-admin (for configure/install/remove the platon-app and modules)
-       Init                      :crit,    pu1, after om1, 15d 
-       
-       section Critical tasks
-       Init                      :crit,    ct1, after pu1, 15d
        
        
    ```
