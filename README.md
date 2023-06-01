@@ -18,7 +18,7 @@ gantt
        Integration with Nats              :done,    pg2, after pg1, 15d
        Integration with Discovery         :done,    pg3, after pd1, 15d
 
-       section Platon-UI-core-B
+       section Platon-UI-core-A/B
        Initialize Platon-UI-core-B         :active, fr1, 2023-05-25, 15d
        Tests for Platon-UI-core-B          :active, fr2, after fr1, 15d
        Documentation                       :active, fr3, after fr2, 2d
